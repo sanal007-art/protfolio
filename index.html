@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Morgan - Full-Stack Developer Portfolio">
+    <title>Alex Morgan | Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Alex<span class="logo-accent"> Morgan</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="profile-photo anim-scale-rotate">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Morgan" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="profile-fallback"><i class="fas fa-user"></i></div>
+            </div>
+            <h1 class="hero-name anim-slide-up stagger-1">Alex Morgan</h1>
+            <h2 class="hero-title anim-slide-up stagger-2">Full-Stack Developer</h2>
+            <p class="typing-text anim-slide-up stagger-3" data-words="Building Digital Experiences,Crafting Clean Code,Turning Ideas Into Reality">
+                <span class="typing-content"></span><span class="typing-cursor">|</span>
+            </p>
+            <div class="hero-cta anim-slide-up stagger-4">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="hero-social anim-slide-up stagger-5">
+                <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title anim-flip">About <span class="accent">Me</span></h2>
+            <div class="about-content">
+                <div class="about-image animate-left">
+                    <div class="about-photo">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop" alt="Development workspace" class="about-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="about-fallback"><i class="fas fa-code"></i></div>
+                        <div class="about-photo-ring"></div>
+                    </div>
+                </div>
+                <div class="about-text animate-right">
+                    <h3>Hello! I'm Alex Morgan</h3>
+                    <p>I'm a passionate full-stack developer with over 5 years of experience crafting digital solutions that make a difference. I specialize in building responsive, user-friendly applications using modern technologies and best practices.</p>
+                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing and mentoring. I believe in writing clean, maintainable code that solves real-world problems.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title anim-flip">My <span class="accent">Skills</span></h2>
+            <p class="section-subtitle anim-slide-up">Technologies and tools I work with on a daily basis</p>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-category glass anim-scale-rotate stagger-1">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon-3d"><i class="fab fa-html5"></i></span>
+                        <span class="skill-icon-3d"><i class="fab fa-css3-alt"></i></span>
+                        <span class="skill-icon-3d"><i class="fab fa-js"></i></span>
+                        Frontend
+                    </h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML & CSS</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Vue.js</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="skill-category glass anim-scale-rotate stagger-2">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon-3d"><i class="fab fa-node-js"></i></span>
+                        <span class="skill-icon-3d"><i class="fab fa-python"></i></span>
+                        <span class="skill-icon-3d"><i class="fas fa-database"></i></span>
+                        Backend
+                    </h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Node.js</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>PostgreSQL</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>MongoDB</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="skill-category glass anim-scale-rotate stagger-3">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon-3d"><i class="fab fa-git-alt"></i></span>
+                        <span class="skill-icon-3d"><i class="fab fa-docker"></i></span>
+                        <span class="skill-icon-3d"><i class="fab fa-aws"></i></span>
+                        Tools
+                    </h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git & GitHub</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Docker</span>
+                                <span class="skill-percent">72%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="72"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>AWS</span>
+                                <span class="skill-percent">68%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="68"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Figma</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Other -->
+                <div class="skill-category glass anim-scale-rotate stagger-4">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon-3d"><i class="fas fa-users"></i></span>
+                        <span class="skill-icon-3d"><i class="fas fa-sync-alt"></i></span>
+                        <span class="skill-icon-3d"><i class="fas fa-flask"></i></span>
+                        Other
+                    </h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Agile / Scrum</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>CI / CD</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Testing</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>UI/UX Design</span>
+                                <span class="skill-percent">60%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" data-level="60"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title anim-flip">My <span class="accent">Projects</span></h2>
+            <p class="section-subtitle anim-slide-up">A selection of recent work I'm proud of</p>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass anim-slide-up stagger-1">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="E-Commerce Platform" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-desc">A full-featured online shopping platform with product management, cart functionality, secure checkout, and real-time inventory tracking.</p>
+                        <div class="tech-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass anim-slide-up stagger-2">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&h=400&fit=crop" alt="Task Management App" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-tasks"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-desc">Collaborative project management tool with drag-and-drop boards, team assignments, deadline tracking, and progress analytics.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Vuex</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card glass anim-slide-up stagger-3">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop" alt="Weather Dashboard" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-cloud-sun"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-desc">Real-time weather dashboard with location search, 7-day forecasts, interactive maps, and severe weather alerts.</p>
+                        <div class="tech-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">OpenWeather API</span>
+                            <span class="tag">Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card glass anim-slide-up stagger-4">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="Social Media API" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Social Media API</h3>
+                        <p class="project-desc">RESTful API powering a social platform with user authentication, posts, comments, likes, and real-time notifications.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card glass anim-slide-up stagger-5">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop" alt="Portfolio Generator" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-file-code"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Portfolio Generator</h3>
+                        <p class="project-desc">Dynamic portfolio website builder with customizable themes, markdown support, automatic deployment, and analytics.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card glass anim-slide-up stagger-6">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop" alt="Chat Application" class="project-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="project-placeholder"><i class="fas fa-comments"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Chat Application</h3>
+                        <p class="project-desc">Real-time messaging platform with private and group chats, file sharing, emoji reactions, and end-to-end encryption.</p>
+                        <div class="tech-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">WebRTC</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <h2 class="section-title anim-flip">What People <span class="accent">Say</span></h2>
+            <p class="section-subtitle anim-slide-up">Feedback from colleagues and clients I've worked with</p>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass active">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Alex is an exceptional developer who consistently delivers high-quality work. Their ability to solve complex problems while maintaining clean code architecture is truly impressive. A pleasure to work with on any project."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Chen</h4>
+                                <span>Engineering Lead at TechFlow Inc.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with Alex transformed our digital presence. They brought creative solutions to our e-commerce challenges and delivered a product that exceeded our expectations. Highly recommended for any web development project."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Mike Rodriguez</h4>
+                                <span>CEO at GreenLeaf Commerce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card glass">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Alex has a rare combination of technical expertise and design sensibility. They don't just write code; they craft experiences. Their contributions to our platform resulted in a 40% improvement in user engagement."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Watson</h4>
+                                <span>Product Manager at Nexus Digital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <button class="dot active" data-index="0" aria-label="Go to testimonial 1"></button>
+                    <button class="dot" data-index="1" aria-label="Go to testimonial 2"></button>
+                    <button class="dot" data-index="2" aria-label="Go to testimonial 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog section">
+        <div class="container">
+            <h2 class="section-title anim-flip">Latest <span class="accent">Blog</span> Posts</h2>
+            <p class="section-subtitle anim-slide-up">Thoughts, tutorials, and insights from my development journey</p>
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card glass anim-slide-up stagger-1">
+                    <div class="blog-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=350&fit=crop" alt="Building Scalable APIs" class="blog-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="blog-placeholder"><i class="fas fa-pen-nib"></i></div>
+                    </div>
+                    <div class="blog-info">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> January 15, 2026</span>
+                        <h3 class="blog-title">Building Scalable APIs with Node.js and GraphQL</h3>
+                        <p class="blog-excerpt">Explore best practices for designing and implementing scalable GraphQL APIs using Node.js, including schema design, resolvers, caching strategies, and performance optimization techniques.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Blog 2 -->
+                <div class="blog-card glass anim-slide-up stagger-2">
+                    <div class="blog-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=350&fit=crop" alt="CSS Grid and Flexbox" class="blog-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="blog-placeholder"><i class="fas fa-laptop-code"></i></div>
+                    </div>
+                    <div class="blog-info">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> February 8, 2026</span>
+                        <h3 class="blog-title">The Complete Guide to CSS Grid and Flexbox</h3>
+                        <p class="blog-excerpt">A comprehensive deep-dive into modern CSS layout techniques. Learn when to use Grid vs Flexbox, advanced patterns, responsive design strategies, and real-world layout examples.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Blog 3 -->
+                <div class="blog-card glass anim-slide-up stagger-3">
+                    <div class="blog-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?w=600&h=350&fit=crop" alt="Deploying with Docker" class="blog-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="blog-placeholder"><i class="fas fa-rocket"></i></div>
+                    </div>
+                    <div class="blog-info">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> March 22, 2026</span>
+                        <h3 class="blog-title">Deploying Apps with Docker and CI/CD Pipelines</h3>
+                        <p class="blog-excerpt">Step-by-step tutorial on containerizing applications with Docker and setting up automated CI/CD pipelines using GitHub Actions. From development to production in minutes.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title anim-flip">Get In <span class="accent">Touch</span></h2>
+            <p class="section-subtitle anim-slide-up">Have a project in mind? Let's work together!</p>
+            <div class="contact-content">
+                <div class="contact-form-wrapper glass anim-scale-rotate">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Thank you! Your message has been sent successfully.</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-info anim-slide-up">
+                    <div class="info-card glass">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="mailto:alex@example.com" class="social-icon" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-bracket">&lt;</span>Alex<span class="logo-accent"> Morgan</span><span class="logo-bracket">/&gt;</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
