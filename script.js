@@ -40,26 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 500);
 
     // ============================================
-    // Sticky Navbar + Active State
+    // Bottom Dock — Active Section + Scroll Hide
     // ============================================
     const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.dock-link');
     const sections = document.querySelectorAll('section[id]');
+    let lastScrollY = 0;
 
     function handleScroll() {
-        // Sticky navbar background
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+        const currentScrollY = window.scrollY;
+
+        // Hide dock on scroll down, show on scroll up
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
+            navbar.classList.add('hidden');
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.classList.remove('hidden');
         }
+        lastScrollY = currentScrollY;
 
         // Active section highlight
         let currentSection = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 150;
             const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            if (currentScrollY >= sectionTop && currentScrollY < sectionTop + sectionHeight) {
                 currentSection = section.getAttribute('id');
             }
         });
@@ -76,25 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll(); // Initial check
 
     // ============================================
-    // Mobile Menu Toggle
-    // ============================================
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when a nav link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // ============================================
     // Smooth Scroll
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -103,8 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const navHeight = navbar.offsetHeight;
-                const targetPosition = targetElement.offsetTop - navHeight;
+                const targetPosition = targetElement.offsetTop - 20;
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'

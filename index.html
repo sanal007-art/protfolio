@@ -12,27 +12,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>Alex<span class="logo-accent"> Morgan</span><span class="logo-bracket">/&gt;</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-content">
@@ -62,7 +41,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">About <span class="accent">Me</span></h2>
             <div class="about-content">
@@ -97,7 +76,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">My <span class="accent">Skills</span></h2>
             <p class="section-subtitle anim-slide-up">Technologies and tools I work with on a daily basis</p>
@@ -295,7 +274,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects section">
+    <section id="projects" class="projects section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">My <span class="accent">Projects</span></h2>
             <p class="section-subtitle anim-slide-up">A selection of recent work I'm proud of</p>
@@ -428,7 +407,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">What People <span class="accent">Say</span></h2>
             <p class="section-subtitle anim-slide-up">Feedback from colleagues and clients I've worked with</p>
@@ -493,7 +472,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="blog section">
+    <section id="blog" class="blog section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">Latest <span class="accent">Blog</span> Posts</h2>
             <p class="section-subtitle anim-slide-up">Thoughts, tutorials, and insights from my development journey</p>
@@ -542,7 +521,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section card-section">
         <div class="container">
             <h2 class="section-title anim-flip">Get In <span class="accent">Touch</span></h2>
             <p class="section-subtitle anim-slide-up">Have a project in mind? Let's work together!</p>
@@ -633,6 +612,33 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Floating Bottom Dock Navigation -->
+    <nav class="bottom-dock" id="navbar">
+        <ul class="dock-menu" id="navMenu">
+            <li><a href="#hero" class="dock-link active">
+                <i class="fas fa-home"></i><span>Home</span>
+            </a></li>
+            <li><a href="#about" class="dock-link">
+                <i class="fas fa-user"></i><span>About</span>
+            </a></li>
+            <li><a href="#skills" class="dock-link">
+                <i class="fas fa-code"></i><span>Skills</span>
+            </a></li>
+            <li><a href="#projects" class="dock-link">
+                <i class="fas fa-folder-open"></i><span>Projects</span>
+            </a></li>
+            <li><a href="#testimonials" class="dock-link">
+                <i class="fas fa-quote-left"></i><span>Reviews</span>
+            </a></li>
+            <li><a href="#blog" class="dock-link">
+                <i class="fas fa-blog"></i><span>Blog</span>
+            </a></li>
+            <li><a href="#contact" class="dock-link">
+                <i class="fas fa-envelope"></i><span>Contact</span>
+            </a></li>
+        </ul>
+    </nav>
 
     <script src="script.js"></script>
 </body>
