@@ -8,7 +8,6 @@ permissions:
   pull-requests: write
   issues: write
   id-token: write
-
 jobs:
   review:
     runs-on: ubuntu-latest
@@ -26,7 +25,7 @@ jobs:
       - name: Claude Code review
         uses: anthropics/claude-code-action@v1
         with:
-          # Value must be your OpenRouter key (sk-or-...), stored in this secret
+          # Value is your OpenRouter key (sk-or-v1-...)
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
@@ -40,5 +39,10 @@ jobs:
           claude_args: |
             --max-turns 10
         env:
-          # Point Claude Code at OpenRouter's Anthropic-compatible endpoint
           ANTHROPIC_BASE_URL: https://openrouter.ai/api
+          # Swap this for the exact free model ID you want, e.g.:
+          # deepseek/deepseek-chat-v3.1:free
+          # meta-llama/llama-3.3-70b-instruct:free
+          # z-ai/glm-4.5-air:free
+          ANTHROPIC_MODEL: deepseek/deepseek-chat-v3.1:free
+          ANTHROPIC_SMALL_FAST_MODEL: deepseek/deepseek-chat-v3.1:free
