@@ -1,1 +1,35 @@
+name: Claude Code Review
 
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Claude Code review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request for a portfolio site (HTML, CSS, JavaScript).
+            Focus on:
+            1. Security (hardcoded secrets, XSS, unsafe innerHTML, leaking form data)
+            2. Missing null checks / runtime crashes
+            3. Accessibility and placeholder links (href="#")
+            For each finding: file, severity (critical/high/medium/low), short explanation, suggested fix.
+          claude_args: |
+            --max-turns 10
