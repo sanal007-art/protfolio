@@ -39,10 +39,6 @@ jobs:
           claude_args: |
             --max-turns 10
         env:
-          ANTHROPIC_BASE_URL: https://openrouter.ai/api
-          # Swap this for the exact free model ID you want, e.g.:
-          # deepseek/deepseek-chat-v3.1:free
-          # meta-llama/llama-3.3-70b-instruct:free
-          # z-ai/glm-4.5-air:free
+          ANTHROPIC_BASE_URL: https://cc.yovy.app
           ANTHROPIC_MODEL: deepseek/deepseek-chat-v3.1:free
           ANTHROPIC_SMALL_FAST_MODEL: deepseek/deepseek-chat-v3.1:free
