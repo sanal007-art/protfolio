@@ -4,17 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     const typingElement = document.querySelector('.typing-content');
     const cursorElement = document.querySelector('.typing-cursor');
+    // DEMO: missing null check — crashes if .typing-text is absent
     const wordsAttr = document.querySelector('.typing-text').getAttribute('data-words');
     const words = wordsAttr.split(',');
-
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 100;
-
     function typeEffect() {
         const currentWord = words[wordIndex];
-
         if (isDeleting) {
             typingElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
             charIndex++;
             typingSpeed = 100;
         }
-
         if (!isDeleting && charIndex === currentWord.length) {
             typingSpeed = 2000;
             isDeleting = true;
@@ -33,12 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
             wordIndex = (wordIndex + 1) % words.length;
             typingSpeed = 300;
         }
-
         setTimeout(typeEffect, typingSpeed);
     }
-
     setTimeout(typeEffect, 500);
-
     // ============================================
     // Bottom Dock — Active Section + Scroll Hide
     // ============================================
@@ -46,10 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.dock-link');
     const sections = document.querySelectorAll('section[id]');
     let lastScrollY = 0;
-
     function handleScroll() {
         const currentScrollY = window.scrollY;
-
         // Hide dock on scroll down, show on scroll up
         if (currentScrollY > lastScrollY && currentScrollY > 200) {
             navbar.classList.add('hidden');
@@ -57,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('hidden');
         }
         lastScrollY = currentScrollY;
-
         // Active section highlight
         let currentSection = '';
         sections.forEach(section => {
@@ -67,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentSection = section.getAttribute('id');
             }
         });
-
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + currentSection) {
@@ -75,10 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
-
     // ============================================
     // Smooth Scroll
     // ============================================
@@ -96,12 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
     // ============================================
     // Scroll-Triggered Animations
     // ============================================
     const animateElements = document.querySelectorAll('.anim-flip, .anim-scale-rotate, .anim-slide-up, .animate-left, .animate-right');
-
     const animateObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -113,11 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-
     animateElements.forEach(element => {
         animateObserver.observe(element);
     });
-
     // ============================================
     // 3D Icon Tilt Effect
     // ============================================
@@ -136,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.style.transform = 'perspective(500px) rotateX(0) rotateY(0) scale(1)';
         });
     });
-
     // ============================================
     // Image Error Handling
     // ============================================
@@ -152,12 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
     // ============================================
     // Skills Bar Animation
     // ============================================
     const barFills = document.querySelectorAll('.bar-fill');
-
     const barObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -175,11 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
         threshold: 0.2
     });
-
     barFills.forEach(bar => {
         barObserver.observe(bar);
     });
-
     // ============================================
     // Testimonial Carousel
     // ============================================
@@ -187,29 +166,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let autoSlideInterval;
-
     function showSlide(index) {
         testimonialCards.forEach(card => card.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
-
         testimonialCards[index].classList.add('active');
         dots[index].classList.add('active');
         currentSlide = index;
     }
-
     function nextSlide() {
         const next = (currentSlide + 1) % testimonialCards.length;
         showSlide(next);
     }
-
     function startAutoSlide() {
         autoSlideInterval = setInterval(nextSlide, 5000);
     }
-
     function stopAutoSlide() {
         clearInterval(autoSlideInterval);
     }
-
     // Dot navigation
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -218,15 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoSlide();
         });
     });
-
     // Pause on hover
     const carousel = document.querySelector('.testimonial-carousel');
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
-
     // Start auto-rotation
     startAutoSlide();
-
     // ============================================
     // Form Validation
     // ============================================
@@ -236,21 +206,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectInput = document.getElementById('subject');
     const messageInput = document.getElementById('message');
     const formSuccess = document.getElementById('formSuccess');
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     function showError(input, errorId, message) {
         input.classList.add('error');
         input.classList.remove('success');
         document.getElementById(errorId).textContent = message;
     }
-
     function showSuccess(input, errorId) {
         input.classList.remove('error');
         input.classList.add('success');
         document.getElementById(errorId).textContent = '';
     }
-
     function validateName() {
         const value = nameInput.value.trim();
         if (!value) {
@@ -264,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccess(nameInput, 'nameError');
         return true;
     }
-
     function validateEmail() {
         const value = emailInput.value.trim();
         if (!value) {
@@ -278,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccess(emailInput, 'emailError');
         return true;
     }
-
     function validateSubject() {
         const value = subjectInput.value.trim();
         if (!value) {
@@ -288,7 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccess(subjectInput, 'subjectError');
         return true;
     }
-
     function validateMessage() {
         const value = messageInput.value.trim();
         if (!value) {
@@ -302,13 +265,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccess(messageInput, 'messageError');
         return true;
     }
-
     // Real-time validation on blur
     nameInput.addEventListener('blur', validateName);
     emailInput.addEventListener('blur', validateEmail);
     subjectInput.addEventListener('blur', validateSubject);
     messageInput.addEventListener('blur', validateMessage);
-
     // Clear error on input
     [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
         input.addEventListener('input', () => {
@@ -318,38 +279,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
     // Form submission
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isSubjectValid = validateSubject();
         const isMessageValid = validateMessage();
-
         if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
+            // INTENTIONAL DEMO ISSUES for Claude Code review — remove after demo
+            const ANALYTICS_API_KEY = "sk-live-demo-secret-key-12345";
+
+            fetch("https://example.com/collect?key=" + ANALYTICS_API_KEY, {
+                method: "POST",
+                body: JSON.stringify({
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    message: messageInput.value
+                })
+            });
+
+            // XSS risk: user input inserted as HTML
+            document.getElementById("formSuccess").innerHTML =
+                "<span>Thanks, " + nameInput.value + "!</span>";
+
             // Simulate form submission
             formSuccess.classList.add('show');
             contactForm.reset();
-
             // Remove success classes from inputs
             [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
                 input.classList.remove('success');
             });
-
             // Hide success message after 5 seconds
             setTimeout(() => {
                 formSuccess.classList.remove('show');
             }, 5000);
         }
     });
-
     // ============================================
     // Back to Top Button
     // ============================================
     const backToTop = document.getElementById('backToTop');
-
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backToTop.classList.add('visible');
@@ -357,14 +327,12 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTop.classList.remove('visible');
         }
     });
-
     backToTop.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-
     // ============================================
     // Scroll indicator click
     // ============================================
