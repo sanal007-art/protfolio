@@ -1,35 +1,7 @@
-name: Claude Code Review
-
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
-  id-token: write
-
-jobs:
-  review:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      - name: Claude Code review
+- name: Claude Code review
         uses: anthropics/claude-code-action@v1
         with:
-          # Action still expects this input; value is your OpenRouter key
+          # value is your OpenRouter key
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
@@ -43,9 +15,4 @@ jobs:
           claude_args: |
             --max-turns 10
         env:
-          # Required for OpenRouter (Anthropic-compatible endpoint)
           ANTHROPIC_BASE_URL: https://openrouter.ai/api
-          # OpenRouter expects Bearer auth
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Must be empty so Claude Code does not use x-api-key against OpenRouter wrongly
-          ANTHROPIC_API_KEY: ""
