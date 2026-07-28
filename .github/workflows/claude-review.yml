@@ -29,6 +29,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
+          use_sticky_comment: true
           prompt: |
             Review this pull request for a portfolio site (HTML, CSS, JavaScript).
             Focus on:
@@ -36,6 +37,8 @@ jobs:
             2. Missing null checks / runtime crashes
             3. Accessibility and placeholder links (href="#")
             For each finding: file, severity (critical/high/medium/low), short explanation, suggested fix.
+            Write your review as your final response — do not use any tool to post it yourself.
+            It will be posted automatically as a PR comment.
           claude_args: |
             --max-turns 10
         env:
