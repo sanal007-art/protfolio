@@ -15,6 +15,11 @@ jobs:
   review:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,6 +30,8 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
           prompt: |
             Review this pull request for a portfolio site (HTML, CSS, JavaScript).
             Focus on:
@@ -34,3 +41,5 @@ jobs:
             For each finding: file, severity (critical/high/medium/low), short explanation, suggested fix.
           claude_args: |
             --max-turns 10
+        env:
+          ANTHROPIC_BASE_URL: https://openrouter.ai/api
