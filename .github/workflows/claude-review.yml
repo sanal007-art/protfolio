@@ -11,7 +11,7 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
       contents: read
       pull-requests: write
@@ -25,7 +25,7 @@ jobs:
       - name: Claude Code review
         uses: anthropics/claude-code-action@v1
         with:
-          # Value is your OpenRouter key (sk-or-v1-...)
+          # Value must be your OpenRouter key (sk-or-v1-...)
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
@@ -39,6 +39,8 @@ jobs:
           claude_args: |
             --max-turns 10
         env:
+          # y-router: translates Anthropic-format requests to OpenAI-format
+          # so non-Anthropic free models work with Claude Code
           ANTHROPIC_BASE_URL: https://cc.yovy.app
-          ANTHROPIC_MODEL: deepseek/deepseek-chat-v3.1:free
-          ANTHROPIC_SMALL_FAST_MODEL: deepseek/deepseek-chat-v3.1:free
+          ANTHROPIC_MODEL: nvidia/nemotron-3-super-120b-a12b:free
+          ANTHROPIC_SMALL_FAST_MODEL: nvidia/nemotron-3-super-120b-a12b:free
